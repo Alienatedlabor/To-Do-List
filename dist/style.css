@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: ghostwhite;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper {
+  display: grid;
+}
+
+ul {
+  text-decoration: none;
+}
+
+li {
+  text-decoration: none;
+}
+
+footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  gap: 5px;
+}
