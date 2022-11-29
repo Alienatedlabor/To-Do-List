@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _tod
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass toDo {\n  constructor(title, description, dueDate, priority) {\n    this.title = title;\n    this.description = description;\n    this.dueDate = dueDate;\n    this.priority = priority;\n    //need the actual to do containers in the constructor?\n  }\n}\n\nlet example = new toDo('Housework', 'various chores', '11/13/2022', 'low');\nlet myList = [];\nmyList.push(example);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (myList);\n\n\n//# sourceURL=webpack://to-do-list/./src/todo.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass toDo {\n  constructor(title, description, dueDate, priority) {\n    this.title = title;\n    this.description = description;\n    this.dueDate = dueDate;\n    this.priority = priority;\n    this.entry = entry;\n    //need the actual to do containers in the constructor?\n  }\n}\n\nlet example = new toDo('Housework', 'various chores', '11/13/2022', 'low');\nlet myProjectList = [];\nmyList.push(example);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (myList);\n\nconsole.log('hi');\n\n\n//# sourceURL=webpack://to-do-list/./src/todo.js?");
 
 /***/ })
 
