@@ -1,9 +1,12 @@
-import myProjectList from './todo';
-class toDo {
-  constructor(title, description, dueDate, priority) {
-    this.title = title;
-    this.description = description;
-    this.dueDate = dueDate;
-    this.priority = priority;
-  }
-}
+import ProjectList from './projectList';
+import Project from './project';
+import renderProjects from './view';
+
+const exampleList = new ProjectList();
+const example = new Project('Housework', 'various chores', '11/13/2022', 'low');
+
+example.addTask('test');
+example.removeTask('test');
+exampleList.addProject(example);
+console.log(exampleList);
+renderProjects(exampleList.projects);

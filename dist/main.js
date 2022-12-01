@@ -16,17 +16,37 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _todo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo */ \"./src/todo.js\");\n\nclass toDo {\n  constructor(title, description, dueDate, priority) {\n    this.title = title;\n    this.description = description;\n    this.dueDate = dueDate;\n    this.priority = priority;\n  }\n}\n\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _projectList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectList */ \"./src/projectList.js\");\n/* harmony import */ var _project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./project */ \"./src/project.js\");\n/* harmony import */ var _view__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./view */ \"./src/view.js\");\n\n\n\n\nconst exampleList = new _projectList__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\nconst example = new _project__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('Housework', 'various chores', '11/13/2022', 'low');\n\nexample.addTask('test');\nexample.removeTask('test');\nexampleList.addProject(example);\nconsole.log(exampleList);\n(0,_view__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(exampleList.projects);\n\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/todo.js":
+/***/ "./src/project.js":
+/*!************************!*\
+  !*** ./src/project.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Project {\n  constructor(title, description, dueDate, priority) {\n    this.title = title;\n    this.description = description;\n    this.dueDate = dueDate;\n    this.priority = priority;\n    this.tasks = [];\n  }\n\n  addTask(task) {\n    this.tasks.push(task);\n  }\n\n  removeTask(task) {\n    this.tasks = this.tasks.filter((t) => t !== task);\n  }\n}\n//\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Project);\n\n\n//# sourceURL=webpack://to-do-list/./src/project.js?");
+
+/***/ }),
+
+/***/ "./src/projectList.js":
+/*!****************************!*\
+  !*** ./src/projectList.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass ProjectList {\n  constructor() {\n    this.projects = [];\n  }\n\n  addProject(project) {\n    this.projects.push(project);\n  }\n\n  removeProject(project) {\n    this.projects = this.projects.filter((p) => p !== project);\n  }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProjectList);\n\n\n//# sourceURL=webpack://to-do-list/./src/projectList.js?");
+
+/***/ }),
+
+/***/ "./src/view.js":
 /*!*********************!*\
-  !*** ./src/todo.js ***!
+  !*** ./src/view.js ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass toDo {\n  constructor(title, description, dueDate, priority) {\n    this.title = title;\n    this.description = description;\n    this.dueDate = dueDate;\n    this.priority = priority;\n    this.entry = entry;\n    //need the actual to do containers in the constructor?\n  }\n}\n\nlet example = new toDo('Housework', 'various chores', '11/13/2022', 'low');\nlet myProjectList = [];\nmyList.push(example);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (myList);\n\nconsole.log('hi');\n\n\n//# sourceURL=webpack://to-do-list/./src/todo.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst wrapper = document.querySelector('.wrapper');\n\nfunction renderProjects(projects) {\n  projects.forEach((project) => {\n    const projectElement = document.createElement('div');\n    projectElement.classList.add('project');\n\n    // title\n    const projectTitle = document.createElement('h1');\n    projectTitle.textContent = project.title;\n    projectElement.appendChild(projectTitle);\n\n    // description\n    const projectDescription = document.createElement('p');\n    projectDescription.textContent = project.description;\n    projectElement.appendChild(projectDescription);\n\n    // due date\n    const projectDueDate = document.createElement('span');\n    projectDueDate.textContent = project.dueDate;\n    projectElement.appendChild(projectDueDate);\n\n    // priority\n    projectElement.classList.add(project.priority);\n\n    wrapper.appendChild(projectElement);\n  });\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderProjects);\n\n\n//# sourceURL=webpack://to-do-list/./src/view.js?");
 
 /***/ })
 
